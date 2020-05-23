@@ -10,5 +10,13 @@ def gallery(request):
     image = Image.objects.all()
     return render(request, 'images.html', {"image": image}) 
 
-
+def search_results(request):
+    if 'searchItem' in request.GET and request.GET["searchItem"]:
+        search_term = request.GET.get("searchItem")
+        searched_image = Image.search_by_category(search_term)
+        message = f"{search_term}"
+        return render(request, 'search.html', {"message": message, "image": searched_image})
+    else:
+        message = "search term"
+        return render(request, 'search.html', {"message": message})
 

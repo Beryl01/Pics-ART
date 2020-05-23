@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{% load static%}
+{% block content %}
+<div id="colorlib-main">
+  <section class="ftco-section bg-light ftco-bread">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center">
+        {% if image %}
+        <div class="col-md-9 ftco-animate">
+          <h2>Found {{ image|length }} of search term {{message}}</h2>
+          {% else %}
+          <h2>Found 0 image for the search term {{message}}</h2>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  <section class="ftco-section-2">
+    <div class="photograhy">
+      <div class="row no-gutters">
+        {% for image in image %}
+        <div class="col-md-4 ftco-animate">
+          <a href="{{image.image.url}}"
+            class="photography-entry img image-popup d-flex justify-content-center align-items-center"
+            style="background-image: url({{image.image.url}});">
+            <div class="overlay"></div>
+            <div class="text text-center">
+              <h3>{{image.category}}</h3>
+              <h3>{{image.location}}</h3>
+              <input class="form-control hide" type="text" value="https://{{image.image.url}}">
+              <button class="btn btn-sm btn-outline-bleu-grey" onclick="copyToClipboard('{{image.image.url}}')">Copy Image Url</button>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
