@@ -12,6 +12,12 @@ class Image(models.Model):
 
     def __str__(self):
         return self.Name  
+
+class Category(models.Model):
+    Name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.Name        
   
     
 
