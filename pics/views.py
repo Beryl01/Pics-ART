@@ -20,3 +20,7 @@ def search_results(request):
         message = "search term"
         return render(request, 'search.html', {"message": message})
 
+def location(request):
+    image = Image.objects.all()
+    locations = Location.objects.all()
+    return render(request, 'location.html', {"image": image, "locations": locations})  
