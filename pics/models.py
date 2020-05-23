@@ -13,6 +13,14 @@ class Image(models.Model):
     def __str__(self):
         return self.Name  
 
+    @classmethod    
+    def save_image(self):
+        self.save()
+
+    @classmethod
+    def delete_image(self):
+        self.delete()    
+
 class Category(models.Model):
     Name = models.CharField(max_length=30)
 
