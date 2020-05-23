@@ -29,6 +29,11 @@ class Image(models.Model):
     def get_image_by_id(cls, id):
         return cls.objects.get(pk=id)    
 
+    @classmethod
+    def search_by_category(cls,search_term):
+      search_results = cls.objects.filter(category__Name__icontains=search_term)
+      return search_results    
+
 class Category(models.Model):
     Name = models.CharField(max_length=30)
 
