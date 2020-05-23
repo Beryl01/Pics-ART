@@ -8,7 +8,17 @@ def index(request):
 
 def gallery(request):
     image = Image.objects.all()
-    return render(request, 'images.html', {"image": image}) 
+    return render(request, 'images.html', {"image": image})
+
+def location(request):
+    image = Image.objects.all()
+    locations = Location.objects.all()
+    return render(request, 'location.html', {"image": image, "locations": locations})    
+
+def search_by_location(request, location):
+    locations = Location.objects.all()
+    image = Image.search_by_location(location)
+    return render(request, 'location.html', {"image": image, "locations": locations})        
 
 def search_results(request):
     if 'searchItem' in request.GET and request.GET["searchItem"]:
@@ -20,7 +30,7 @@ def search_results(request):
         message = "search term"
         return render(request, 'search.html', {"message": message})
 
-def location(request):
-    image = Image.objects.all()
-    locations = Location.objects.all()
-    return render(request, 'location.html', {"image": image, "locations": locations})  
+    
+
+
+
