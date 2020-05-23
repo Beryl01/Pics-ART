@@ -34,6 +34,11 @@ class Image(models.Model):
       search_results = cls.objects.filter(category__Name__icontains=search_term)
       return search_results    
 
+    @classmethod
+    def search_by_location(cls, search_term):
+        image = Image.objects.filter(location__id=search_term).all()
+        return image  
+
 class Category(models.Model):
     Name = models.CharField(max_length=30)
 
