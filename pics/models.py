@@ -21,6 +21,10 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()    
 
+    @classmethod
+    def update_image(cls, id, value):
+        cls.objects.filter(id=id).update(value)    
+
 class Category(models.Model):
     Name = models.CharField(max_length=30)
 
@@ -33,7 +37,12 @@ class Category(models.Model):
         
     @classmethod
     def delete_category(self):
-        self.delete()      
+        self.delete()     
+
+    @classmethod
+    def update_category(cls, id, new_category):
+        cls.objects.filter(id=id).update(Category=new_category)    
+     
 
 class Location(models.Model):
     place = models.CharField(max_length=30)
@@ -49,6 +58,9 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()     
   
+    @classmethod
+    def update_location(cls, id, new_location):
+        cls.objects.filter(id=id).update(location=new_location)  
     
 
       
