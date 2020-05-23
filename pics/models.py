@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
- 
+Deafult_desc = "My Pics at Pics ART" 
 class Image(models.Model):
     Name = models.CharField(max_length=60)
     description = models.TextField(default=Deafult_desc)
@@ -24,6 +24,10 @@ class Image(models.Model):
     @classmethod
     def update_image(cls, id, value):
         cls.objects.filter(id=id).update(value)    
+
+    @classmethod
+    def get_image_by_id(cls, id):
+        return cls.objects.get(pk=id)    
 
 class Category(models.Model):
     Name = models.CharField(max_length=30)
