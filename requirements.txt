@@ -18,6 +18,6 @@ python-editor==1.0.4
 pytz==2020.1
 requests==2.18.4
 requests-unixsocket==0.1.5
-urllib3==1.22
+urllib3==1.24.2
 whitenoise==5.1.0
 
