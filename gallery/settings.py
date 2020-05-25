@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9paq%thad*+-#l1kmxskimhe2m^hd0h)4&gaj8ki9y2=0e&_hb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['pics-art-1.herokuapp.com', '127.0.0.1']
 
