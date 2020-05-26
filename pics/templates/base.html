@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +6,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
 	<div id="colorlib-page">
-		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="{% url 'index' %}"><span class=""></span>Pics ART</a></h1>
+		<aside id="colorlib-aside" class="text-center">
+			<h1>Pics ART</h1>
 			<form action="{% url 'search_results' %}" class="search-form" role="search">
 				<div class="form-group">
 					<span class="icon icon-search"></span>
@@ -18,7 +19,7 @@
 				</div>
 			</form>
 			<br>
-			<nav id="colorlib-main-menu" role="navigation">
+			<nav id="colorlib-main-menu">
 				<ul>
 					<li><a href="{% url 'index' %}">Home</a></li>
 					<li><a href="{% url 'gallery' %}">Gallery</a></li>
@@ -28,13 +29,8 @@
 			<div class="colorlib-footer">
 				<h3>For Photo Shoots</h3>
 				<h3>Follow Me Here!</h3>
-				<div class="d-flex justify-content-center">
-					<ul class="d-flex align-items-center jusitfy-content-center">
-						<li class=""><a href="#"><i class="icon-facebook"></i></a></li>
-						<li class=""><a href="#"><i class="icon-twitter"></i></a></li>
-						<li class=""><a href="#"><i class="icon-instagram"></i></a></li>
-						<li class=""><a href="#"><i class="icon-linkedin"></i></a></li>
-					</ul>
+				<div>
+					<h1>@pics_art/</h1>
 				</div>
 			</div>
 		</aside>

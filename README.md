@@ -34,7 +34,7 @@ python3 -m venv virtual - source virtual/bin/activate
 pip install -r requirements.txt 
 ```  
 ##### Setup Database  
-SetUp your database User,Password, Host then make migrate  
+SetUp your database User,Password, Host then make migrations
  ```bash 
 python manage.py makemigrations gallery
  ``` 
