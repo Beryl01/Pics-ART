@@ -5,8 +5,6 @@ Beryl Negesa Otieno
 ### Description  
 This is an application that enables users to view different categories of images and their locations and also able to copy the link and share it to other friends.
 
-### Deployed link
-https://pics-art-1.herokuapp.com/
 
 ### BDD
 | Behaviour         | Input            | Output                     |
